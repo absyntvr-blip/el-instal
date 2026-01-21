@@ -20,7 +20,7 @@ export default function HeroBackground() {
   }));
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
       {/* Animated electrical schematics - BEFORE gradient so they show through */}
       <div className="absolute inset-0 z-[5]">
         {/* Schematic 1 - Top Left */}
@@ -120,14 +120,14 @@ export default function HeroBackground() {
         </motion.div>
       </div>
 
-      {/* Gradient overlay - AFTER schematics with lower opacity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/70 via-[#0A0A0A]/60 to-[#1A1A1A]/80 z-[8]" />
-      
-      {/* Additional glow effects */}
-      <div className="absolute inset-0 z-[7]">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D9FF]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00D9FF]/5 rounded-full blur-3xl"></div>
+      {/* Additional glow effects - BEFORE gradient */}
+      <div className="absolute inset-0 z-[6]">
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D9FF]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00D9FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
+      
+      {/* Gradient overlay - AFTER schematics with lower opacity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/50 to-[#1A1A1A]/70 z-[8]" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 z-[6] opacity-25">
