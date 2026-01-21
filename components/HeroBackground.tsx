@@ -131,8 +131,8 @@ export default function HeroBackground() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00D9FF]/10 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Gradient overlay - AFTER schematics with lower opacity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/50 to-[#1A1A1A]/70 z-[8]" />
+      {/* Gradient overlay - AFTER schematics with much lower opacity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-[#0A0A0A]/20 to-[#1A1A1A]/40 z-[8]" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 z-[6] opacity-40">
