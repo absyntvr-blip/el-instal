@@ -26,9 +26,10 @@ export default function HeroBackground() {
         {/* Schematic 1 - Top Left */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 0.7, x: 0 }}
+          animate={{ opacity: 0.9, x: 0 }}
           transition={{ duration: 2, delay: 0.5 }}
           className="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96"
+          style={{ filter: 'drop-shadow(0 0 20px rgba(0, 217, 255, 0.5))' }}
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -36,15 +37,17 @@ export default function HeroBackground() {
             fill
             className="object-contain"
             sizes="(max-width: 768px) 256px, 320px"
+            priority
           />
         </motion.div>
 
         {/* Schematic 2 - Top Right */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 0.7, x: 0 }}
+          animate={{ opacity: 0.9, x: 0 }}
           transition={{ duration: 2, delay: 0.7 }}
           className="absolute top-32 right-10 w-72 h-72 md:w-[500px] md:h-[500px]"
+          style={{ filter: 'drop-shadow(0 0 20px rgba(0, 217, 255, 0.5))' }}
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -52,6 +55,7 @@ export default function HeroBackground() {
             fill
             className="object-contain rotate-90"
             sizes="(max-width: 768px) 288px, 384px"
+            priority
           />
         </motion.div>
 
@@ -122,22 +126,23 @@ export default function HeroBackground() {
 
       {/* Additional glow effects - BEFORE gradient */}
       <div className="absolute inset-0 z-[6]">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D9FF]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00D9FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D9FF]/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00D9FF]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00D9FF]/10 rounded-full blur-3xl"></div>
       </div>
       
       {/* Gradient overlay - AFTER schematics with lower opacity */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/50 to-[#1A1A1A]/70 z-[8]" />
 
       {/* Animated grid pattern */}
-      <div className="absolute inset-0 z-[6] opacity-25">
+      <div className="absolute inset-0 z-[6] opacity-40">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.5" opacity="0.7"/>
+            <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.8" opacity="0.8"/>
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
         </svg>
       </div>
 
