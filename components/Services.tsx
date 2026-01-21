@@ -125,21 +125,22 @@ export default function Services() {
                     <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 leading-tight">{service.title}</h3>
                     <p className="text-gray-300 mb-4 flex-grow leading-relaxed">{service.shortDesc}</p>
 
-                  <motion.div
-                    initial={false}
-                    animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <ul className="space-y-2 mt-4">
-                      {service.fullDesc.map((item, idx) => (
-                        <li key={idx} className="text-box-body text-gray-400 flex items-start leading-relaxed">
-                          <span className="text-[#00D9FF] mr-2 flex-shrink-0 mt-1">•</span>
-                          <span className="flex-1">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <ul className="space-y-2 mt-4">
+                        {service.fullDesc.map((item, idx) => (
+                          <li key={idx} className="text-box-body text-gray-400 flex items-start leading-relaxed">
+                            <span className="text-[#00D9FF] mr-2 flex-shrink-0 mt-1">•</span>
+                            <span className="flex-1">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </div>
                 </motion.div>
               </motion.div>
             );
