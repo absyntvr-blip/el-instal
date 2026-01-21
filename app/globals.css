@@ -136,3 +136,27 @@ h3 {
               0 0 90px rgba(0, 217, 255, 0.2);
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1),
+              0 0 20px rgba(0, 217, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+textarea:hover {
+  border-color: #00D9FF30;
+}
