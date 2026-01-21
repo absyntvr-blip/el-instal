@@ -75,8 +75,8 @@ export default function Contact() {
                     <Phone className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Telefon</h3>
-                    <a href="tel:+48123456789" className="text-gray-400 hover:text-[#00D9FF] transition-colors">
+                    <h3 className="text-white font-semibold mb-1 text-box-title">Telefon</h3>
+                    <a href="tel:+48123456789" className="text-gray-400 hover:text-[#00D9FF] transition-colors text-box-body">
                       +48 123 456 789
                     </a>
                   </div>
@@ -87,16 +87,16 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Email</h3>
-                    <a href="mailto:kontakt@el-instal.pl" className="text-gray-400 hover:text-[#00D9FF] transition-colors">
+                    <h3 className="text-white font-semibold mb-1 text-box-title">Email</h3>
+                    <a href="mailto:kontakt@el-instal.pl" className="text-gray-400 hover:text-[#00D9FF] transition-colors text-box-body break-all">
                       kontakt@el-instal.pl
                     </a>
                   </div>
                 </div>
 
                 <div className="mt-8 p-6 bg-[#2A2A2A] rounded-lg border border-[#2A2A2A]">
-                  <h3 className="text-white font-semibold mb-2">Jakub [Nazwisko]</h3>
-                  <p className="text-gray-400 text-sm">
+                  <h3 className="text-white font-semibold mb-2 text-box-title">Jakub [Nazwisko]</h3>
+                  <p className="text-gray-400 text-box-body leading-relaxed">
                     Specjalista ds. instalacji elektrycznych i teletechnicznych
                   </p>
                 </div>

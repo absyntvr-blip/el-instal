@@ -117,8 +117,8 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-400 mb-4 flex-grow">{service.shortDesc}</p>
+                  <h3 className="text-box-title font-semibold text-white mb-3 leading-tight">{service.title}</h3>
+                  <p className="text-box-body text-gray-400 mb-4 flex-grow leading-relaxed">{service.shortDesc}</p>
 
                   <motion.div
                     initial={false}
@@ -128,9 +128,9 @@ export default function Services() {
                   >
                     <ul className="space-y-2 mt-4">
                       {service.fullDesc.map((item, idx) => (
-                        <li key={idx} className="text-sm text-gray-400 flex items-start">
-                          <span className="text-[#00D9FF] mr-2">•</span>
-                          {item}
+                        <li key={idx} className="text-box-body text-gray-400 flex items-start leading-relaxed">
+                          <span className="text-[#00D9FF] mr-2 flex-shrink-0 mt-1">•</span>
+                          <span className="flex-1">{item}</span>
                         </li>
                       ))}
                     </ul>

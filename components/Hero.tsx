@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Zap } from 'lucide-react';
 import { useRef } from 'react';
+import HeroBackground from './HeroBackground';
 
 export default function Hero() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -13,9 +14,9 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-[#1A1A1A]" />
+      <HeroBackground />
       
-      <div className="relative z-10 container mx-auto">
+      <div className="relative z-20 container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

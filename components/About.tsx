@@ -27,12 +27,12 @@ export default function About() {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <h2 className="text-white mb-6">O nas</h2>
-          <p className="text-lg text-gray-400 leading-relaxed mb-4">
+          <p className="text-box-body text-gray-400 leading-relaxed mb-4 max-w-3xl mx-auto">
             Od ponad 15 lat realizujemy projekty instalacji elektrycznych i teletechnicznych 
             na terenie całej Polski. Specjalizujemy się w kompleksowych rozwiązaniach 
             od instalacji domowych po zaawansowane systemy dla obiektów komercyjnych.
           </p>
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-box-body text-gray-400 leading-relaxed max-w-3xl mx-auto">
             Nasz zespół certyfikowanych elektryków i specjalistów teletechnicznych 
             zapewnia najwyższą jakość wykonania oraz pełną dokumentację powykonawczą.
           </p>
@@ -50,8 +50,8 @@ export default function About() {
                 className="text-center p-6 md:p-8 rounded-lg bg-[#2A2A2A] border border-[#2A2A2A] hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col items-center justify-center min-h-[200px]"
               >
                 <Icon className="w-12 h-12 text-[#00D9FF] mx-auto mb-4 flex-shrink-0" />
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">{stat.value}</div>
+                <div className="text-gray-400 text-sm md:text-base leading-relaxed px-2">{stat.label}</div>
               </motion.div>
             );
           })}

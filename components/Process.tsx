@@ -71,8 +71,8 @@ export default function Process() {
                     </div>
                     <Icon className="w-8 h-8 text-[#00D9FF]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-400 text-sm">{step.description}</p>
+                  <h3 className="text-box-title font-semibold text-white mb-3 leading-tight">{step.title}</h3>
+                  <p className="text-box-body text-gray-400 leading-relaxed">{step.description}</p>
                 </div>
 
                 {index < steps.length - 1 && (

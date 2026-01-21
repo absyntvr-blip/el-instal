@@ -43,9 +43,9 @@ export default function Technologies() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 text-center hover:border-[#00D9FF]/50 transition-all duration-300"
+              className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 text-center hover:border-[#00D9FF]/50 transition-all duration-300 min-h-[100px] flex items-center justify-center"
             >
-              <div className="text-xl font-semibold text-white">{tech}</div>
+              <div className="text-box-title font-semibold text-white leading-tight">{tech}</div>
             </motion.div>
           ))}
         </div>
