@@ -26,9 +26,9 @@ export default function HeroBackground() {
         {/* Schematic 1 - Top Left */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 0.4, x: 0 }}
+          animate={{ opacity: 0.7, x: 0 }}
           transition={{ duration: 2, delay: 0.5 }}
-          className="absolute top-20 left-10 w-64 h-64 md:w-80 md:h-80"
+          className="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96"
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -42,9 +42,9 @@ export default function HeroBackground() {
         {/* Schematic 2 - Top Right */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 0.4, x: 0 }}
+          animate={{ opacity: 0.7, x: 0 }}
           transition={{ duration: 2, delay: 0.7 }}
-          className="absolute top-32 right-10 w-72 h-72 md:w-96 md:h-96"
+          className="absolute top-32 right-10 w-72 h-72 md:w-[500px] md:h-[500px]"
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -58,9 +58,9 @@ export default function HeroBackground() {
         {/* Schematic 3 - Bottom Left */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.35, y: 0 }}
+          animate={{ opacity: 0.6, y: 0 }}
           transition={{ duration: 2, delay: 0.9 }}
-          className="absolute bottom-32 left-20 w-56 h-56 md:w-72 md:h-72"
+          className="absolute bottom-32 left-20 w-64 h-64 md:w-96 md:h-96"
         >
           <Image
             src="/images/placeholder-installation.svg"
@@ -74,9 +74,9 @@ export default function HeroBackground() {
         {/* Schematic 4 - Bottom Right */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.35, y: 0 }}
+          animate={{ opacity: 0.6, y: 0 }}
           transition={{ duration: 2, delay: 1.1 }}
-          className="absolute bottom-20 right-20 w-64 h-64 md:w-80 md:h-80"
+          className="absolute bottom-20 right-20 w-64 h-64 md:w-96 md:h-96"
         >
           <Image
             src="/images/placeholder-teletechnics.svg"
@@ -90,9 +90,9 @@ export default function HeroBackground() {
         {/* Schematic 5 - Center Left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.3, scale: 1 }}
+          animate={{ opacity: 0.5, scale: 1 }}
           transition={{ duration: 2.5, delay: 1.3 }}
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64"
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-56 h-56 md:w-80 md:h-80"
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -106,9 +106,9 @@ export default function HeroBackground() {
         {/* Schematic 6 - Center Right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.3, scale: 1 }}
+          animate={{ opacity: 0.5, scale: 1 }}
           transition={{ duration: 2.5, delay: 1.5 }}
-          className="absolute top-1/2 right-0 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64"
+          className="absolute top-1/2 right-0 -translate-y-1/2 w-56 h-56 md:w-80 md:h-80"
         >
           <Image
             src="/images/placeholder-electrical.svg"
@@ -121,14 +121,20 @@ export default function HeroBackground() {
       </div>
 
       {/* Gradient overlay - AFTER schematics with lower opacity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/95 via-[#0A0A0A]/90 to-[#1A1A1A]/95 z-[8]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/70 via-[#0A0A0A]/60 to-[#1A1A1A]/80 z-[8]" />
+      
+      {/* Additional glow effects */}
+      <div className="absolute inset-0 z-[7]">
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D9FF]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#00D9FF]/5 rounded-full blur-3xl"></div>
+      </div>
 
       {/* Animated grid pattern */}
-      <div className="absolute inset-0 z-[6] opacity-15">
+      <div className="absolute inset-0 z-[6] opacity-25">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.5" opacity="0.5"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.5" opacity="0.7"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />

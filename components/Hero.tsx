@@ -27,17 +27,21 @@ export default function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-[#00D9FF]/10 border border-[#00D9FF]/30"
+            className="inline-flex items-center gap-3 mb-8 md:mb-12 px-6 py-3 rounded-full bg-[#00D9FF]/15 border border-[#00D9FF]/40 backdrop-blur-sm shadow-lg shadow-[#00D9FF]/20"
           >
-            <Zap className="w-4 h-4 text-[#00D9FF]" />
-            <span className="text-sm text-[#00D9FF] font-mono">15+ LAT DOŚWIADCZENIA</span>
+            <Zap className="w-5 h-5 text-[#00D9FF] animate-pulse" />
+            <span className="text-sm md:text-base font-bold text-[#00D9FF] font-mono tracking-wider uppercase">15+ LAT DOŚWIADCZENIA</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-white mb-6 font-bold tracking-tight"
+            className="text-white mb-8 md:mb-12 font-black tracking-tighter leading-none"
+            style={{
+              textShadow: '0 0 40px rgba(0, 217, 255, 0.3), 0 0 80px rgba(0, 217, 255, 0.1)',
+              letterSpacing: '-0.05em',
+            }}
           >
             EL INSTAL
           </motion.h1>
@@ -46,7 +50,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-6 font-light leading-relaxed"
+            className="text-2xl md:text-3xl lg:text-4xl text-gray-100 mb-6 md:mb-8 font-medium leading-tight tracking-tight"
+            style={{ letterSpacing: '-0.02em' }}
           >
             Precyzja w instalacjach elektrycznych
           </motion.p>
@@ -55,7 +60,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-base md:text-lg text-gray-400 mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-light"
+            style={{ letterSpacing: '0.01em' }}
           >
             Od niskiego do wysokiego napięcia. Od idei do certyfikatu.
           </motion.p>
@@ -64,21 +70,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center"
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.08, y: -4 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#00D9FF] text-[#0A0A0A] font-semibold rounded-xl neon-glow-hover transition-all duration-300 shadow-lg shadow-[#00D9FF]/20"
+              className="px-10 md:px-12 py-5 md:py-6 bg-[#00D9FF] text-[#0A0A0A] font-bold text-lg md:text-xl rounded-xl neon-glow-hover transition-all duration-300 shadow-2xl shadow-[#00D9FF]/40 border-2 border-[#00D9FF] relative overflow-hidden group"
             >
-              Bezpłatna wycena
+              <span className="relative z-10 flex items-center gap-2">
+                Bezpłatna wycena
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF] to-[#00B8E6] opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </motion.a>
             <motion.a
               href="#services"
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.08, y: -4 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-[#00D9FF] text-[#00D9FF] font-semibold rounded-xl hover:bg-[#00D9FF]/10 transition-all duration-300"
+              className="px-10 md:px-12 py-5 md:py-6 border-2 border-[#00D9FF] text-[#00D9FF] font-bold text-lg md:text-xl rounded-xl hover:bg-[#00D9FF]/15 transition-all duration-300 backdrop-blur-sm shadow-lg shadow-[#00D9FF]/20"
             >
               Nasze usługi
             </motion.a>
