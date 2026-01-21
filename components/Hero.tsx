@@ -46,7 +46,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-4 font-light"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-6 font-light leading-relaxed"
           >
             Precyzja w instalacjach elektrycznych
           </motion.p>
@@ -55,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-gray-400 mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed"
           >
             Od niskiego do wysokiego napięcia. Od idei do certyfikatu.
           </motion.p>
@@ -68,17 +68,17 @@ export default function Hero() {
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#00D9FF] text-[#0A0A0A] font-semibold rounded-lg neon-glow-hover transition-all duration-300"
+              className="px-8 py-4 bg-[#00D9FF] text-[#0A0A0A] font-semibold rounded-xl neon-glow-hover transition-all duration-300 shadow-lg shadow-[#00D9FF]/20"
             >
               Bezpłatna wycena
             </motion.a>
             <motion.a
               href="#services"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-[#00D9FF] text-[#00D9FF] font-semibold rounded-lg hover:bg-[#00D9FF]/10 transition-all duration-300"
+              className="px-8 py-4 border-2 border-[#00D9FF] text-[#00D9FF] font-semibold rounded-xl hover:bg-[#00D9FF]/10 transition-all duration-300"
             >
               Nasze usługi
             </motion.a>

@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative w-full overflow-hidden">
+    <section id="contact" className="py-20 md:py-28 lg:py-32 relative w-full overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
@@ -61,9 +61,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
+          {/* Section Header */}
           <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-white mb-6">Kontakt</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-white mb-4 md:mb-6">Kontakt</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
               Skontaktuj się z nami, aby uzyskać bezpłatną wycenę projektu
             </p>
           </div>

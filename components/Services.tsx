@@ -59,22 +59,23 @@ export default function Services() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-24 md:py-32 relative w-full">
+    <section id="services" className="py-20 md:py-28 lg:py-32 relative w-full">
       <div className="container mx-auto">
+        {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-white mb-6">Nasze usługi</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-white mb-4 md:mb-6">Nasze usługi</h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
             Kompleksowe rozwiązania w zakresie instalacji elektrycznych i teletechnicznych
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isExpanded = expanded === index;
@@ -84,41 +85,45 @@ export default function Services() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
                 className="relative group flex"
               >
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 md:p-8 h-full w-full cursor-pointer transition-all duration-300 hover:border-[#00D9FF]/50 flex flex-col overflow-hidden"
+                  whileHover={{ y: -6 }}
+                  className="bg-[#2A2A2A] border border-[#2A2A2A]/50 rounded-xl p-0 h-full w-full cursor-pointer transition-all duration-300 hover:border-[#00D9FF]/50 flex flex-col overflow-hidden group"
                   onClick={() => setExpanded(isExpanded ? null : index)}
                 >
-                  <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden bg-[#0A0A0A]">
+                  <div className="relative w-full h-56 rounded-t-xl overflow-hidden bg-[#0A0A0A]">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover opacity-60"
+                      className="object-cover opacity-70 group-hover:opacity-80 transition-opacity"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2A2A2A] to-transparent"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div
-                        className="p-4 rounded-lg backdrop-blur-sm"
-                        style={{ backgroundColor: `${service.color}20` }}
+                        className="p-5 rounded-xl backdrop-blur-md border border-white/10"
+                        style={{ backgroundColor: `${service.color}25` }}
                       >
-                        <Icon className="w-12 h-12" style={{ color: service.color }} />
+                        <Icon className="w-10 h-10 md:w-12 md:h-12" style={{ color: service.color }} />
                       </div>
                     </div>
                     <div className="absolute top-4 right-4">
-                      {isExpanded ? (
-                        <ChevronUp className="w-5 h-5 text-gray-400 bg-[#2A2A2A]/80 rounded-full p-1" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400 bg-[#2A2A2A]/80 rounded-full p-1" />
-                      )}
+                      <div className="p-2 bg-[#2A2A2A]/90 backdrop-blur-sm rounded-full">
+                        {isExpanded ? (
+                          <ChevronUp className="w-4 h-4 text-gray-300" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 text-gray-300" />
+                        )}
+                      </div>
                     </div>
                   </div>
 
-                  <h3 className="text-box-title font-semibold text-white mb-3 leading-tight">{service.title}</h3>
-                  <p className="text-box-body text-gray-400 mb-4 flex-grow leading-relaxed">{service.shortDesc}</p>
+                  <div className="p-6 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 leading-tight">{service.title}</h3>
+                    <p className="text-gray-300 mb-4 flex-grow leading-relaxed">{service.shortDesc}</p>
 
                   <motion.div
                     initial={false}

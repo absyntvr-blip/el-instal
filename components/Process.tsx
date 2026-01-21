@@ -38,22 +38,24 @@ export default function Process() {
   });
 
   return (
-    <section id="process" className="py-24 md:py-32 relative w-full">
+    <section id="process" className="py-20 md:py-28 lg:py-32 relative w-full">
       <div className="container mx-auto">
+        {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-white mb-6">Proces pracy</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-white mb-4 md:mb-6">Proces pracy</h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
             Od pierwszego kontaktu do finalnego odbioru - kompleksowa obsługa projektu
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -62,22 +64,24 @@ export default function Process() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="relative"
+                className="relative group"
               >
-                <div className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 h-full hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col min-h-[200px]">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="text-4xl font-bold text-[#00D9FF] font-mono">
+                <div className="bg-[#2A2A2A] border border-[#2A2A2A]/50 rounded-xl p-6 md:p-8 h-full hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col min-h-[240px] group-hover:bg-[#2F2F2F]">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="text-3xl md:text-4xl font-bold text-[#00D9FF] font-mono leading-none">
                       {step.number}
                     </div>
-                    <Icon className="w-8 h-8 text-[#00D9FF]" />
+                    <div className="p-2 rounded-lg bg-[#00D9FF]/10 group-hover:bg-[#00D9FF]/20 transition-colors">
+                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-[#00D9FF]" />
+                    </div>
                   </div>
-                  <h3 className="text-box-title font-semibold text-white mb-3 leading-tight">{step.title}</h3>
-                  <p className="text-box-body text-gray-400 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-3 leading-tight">{step.title}</h3>
+                  <p className="text-gray-300 leading-relaxed flex-grow">{step.description}</p>
                 </div>
 
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <div className="w-8 h-0.5 bg-[#00D9FF]/30" />
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <div className="w-8 h-0.5 bg-gradient-to-r from-[#00D9FF]/50 to-transparent" />
                   </div>
                 )}
               </motion.div>

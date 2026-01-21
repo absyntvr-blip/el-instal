@@ -36,27 +36,27 @@ body {
   min-height: 100vh;
 }
 
-/* Container utilities */
+/* Container utilities - consistent spacing */
 .container {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem; /* 32px */
+    padding-right: 2rem; /* 32px */
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem; /* 64px */
+    padding-right: 4rem; /* 64px */
   }
 }
 
@@ -84,43 +84,64 @@ section {
   background: #00D9FF;
 }
 
-/* Typography */
+/* Typography System - 8px baseline grid */
 h1 {
-  font-size: clamp(48px, 8vw, 120px);
+  font-size: clamp(3rem, 8vw, 7.5rem); /* 48px - 120px */
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: clamp(32px, 5vw, 72px);
+  font-size: clamp(2rem, 5vw, 4.5rem); /* 32px - 72px */
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: clamp(20px, 2.5vw, 32px);
+  font-size: clamp(1.25rem, 2.5vw, 2rem); /* 20px - 32px */
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 0.75rem;
 }
 
-/* Text sizing for boxes */
+/* Text sizing for boxes - improved hierarchy */
 .text-box-title {
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.4;
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem); /* 18px - 24px */
+  line-height: 1.5;
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .text-box-body {
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* Section headings subtitle */
+.section-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px */
   line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Body text */
+p {
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem); /* 15px - 18px */
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 /* Neon glow effect */
