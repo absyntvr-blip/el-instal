@@ -1,0 +1,44 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0A0A0A"/>
+  <!-- Electrical circuit pattern -->
+  <g stroke="#00D9FF" stroke-width="2" opacity="0.6">
+    <!-- Main circuit lines -->
+    <line x1="100" y1="300" x2="700" y2="300"/>
+    <line x1="400" y1="100" x2="400" y2="500"/>
+    <line x1="200" y1="150" x2="600" y2="450"/>
+    <line x1="600" y1="150" x2="200" y2="450"/>
+    
+    <!-- Circuit nodes -->
+    <circle cx="200" cy="200" r="8" fill="#00D9FF" opacity="0.8"/>
+    <circle cx="400" cy="200" r="8" fill="#00D9FF" opacity="0.8"/>
+    <circle cx="600" cy="200" r="8" fill="#00D9FF" opacity="0.8"/>
+    <circle cx="200" cy="400" r="8" fill="#00D9FF" opacity="0.8"/>
+    <circle cx="400" cy="400" r="8" fill="#00D9FF" opacity="0.8"/>
+    <circle cx="600" cy="400" r="8" fill="#00D9FF" opacity="0.8"/>
+    
+    <!-- Transformer symbol -->
+    <g transform="translate(350, 250)">
+      <circle cx="0" cy="0" r="30" stroke="#00D9FF" fill="none"/>
+      <line x1="-20" y1="-30" x2="-20" y2="30"/>
+      <line x1="20" y1="-30" x2="20" y2="30"/>
+    </g>
+    
+    <!-- Electrical symbols -->
+    <g transform="translate(150, 300)">
+      <rect x="-15" y="-15" width="30" height="30" stroke="#00D9FF" fill="none"/>
+      <line x1="0" y1="-15" x2="0" y2="15"/>
+      <line x1="-15" y1="0" x2="15" y2="0"/>
+    </g>
+    
+    <g transform="translate(650, 300)">
+      <circle cx="0" cy="0" r="15" stroke="#00D9FF" fill="none"/>
+      <line x1="0" y1="-15" x2="0" y2="-25"/>
+      <line x1="0" y1="15" x2="0" y2="25"/>
+    </g>
+  </g>
+  
+  <!-- Glow effects -->
+  <circle cx="400" cy="300" r="100" fill="#00D9FF" opacity="0.05"/>
+  <circle cx="200" cy="200" r="30" fill="#00D9FF" opacity="0.1"/>
+  <circle cx="600" cy="400" r="30" fill="#00D9FF" opacity="0.1"/>
+</svg>

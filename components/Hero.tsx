@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-[#1A1A1A]" />
       
-      <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24">
+      <div className="relative z-10 container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

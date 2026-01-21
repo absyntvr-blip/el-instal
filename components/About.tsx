@@ -17,8 +17,8 @@ export default function About() {
   });
 
   return (
-    <section id="about" className="py-24 md:py-32 relative">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24">
+    <section id="about" className="py-24 md:py-32 relative w-full">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +38,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -47,11 +47,11 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
-                className="text-center p-8 rounded-lg bg-[#2A2A2A] border border-[#2A2A2A] hover:border-[#00D9FF]/50 transition-all duration-300"
+                className="text-center p-6 md:p-8 rounded-lg bg-[#2A2A2A] border border-[#2A2A2A] hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col items-center justify-center min-h-[200px]"
               >
-                <Icon className="w-12 h-12 text-[#00D9FF] mx-auto mb-4" />
-                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
+                <Icon className="w-12 h-12 text-[#00D9FF] mx-auto mb-4 flex-shrink-0" />
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
               </motion.div>
             );
           })}

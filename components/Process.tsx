@@ -38,14 +38,14 @@ export default function Process() {
   });
 
   return (
-    <section id="process" className="py-24 md:py-32 relative">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24">
+    <section id="process" className="py-24 md:py-32 relative w-full">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-white mb-6">Proces pracy</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ export default function Process() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -64,7 +64,7 @@ export default function Process() {
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 className="relative"
               >
-                <div className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 h-full hover:border-[#00D9FF]/50 transition-all duration-300">
+                <div className="bg-[#2A2A2A] border border-[#2A2A2A] rounded-lg p-6 h-full hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col min-h-[200px]">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="text-4xl font-bold text-[#00D9FF] font-mono">
                       {step.number}
