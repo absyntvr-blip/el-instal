@@ -21,114 +21,114 @@ export default function HeroBackground() {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-[#1A1A1A] z-10" />
-      
-      {/* Animated electrical schematics */}
-      <div className="absolute inset-0 z-0">
+      {/* Animated electrical schematics - BEFORE gradient so they show through */}
+      <div className="absolute inset-0 z-[5]">
         {/* Schematic 1 - Top Left */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 0.15, x: 0 }}
+          animate={{ opacity: 0.4, x: 0 }}
           transition={{ duration: 2, delay: 0.5 }}
-          className="absolute top-20 left-10 w-64 h-64"
+          className="absolute top-20 left-10 w-64 h-64 md:w-80 md:h-80"
         >
           <Image
             src="/images/placeholder-electrical.svg"
             alt=""
             fill
-            className="object-contain opacity-30"
-            sizes="256px"
+            className="object-contain"
+            sizes="(max-width: 768px) 256px, 320px"
           />
         </motion.div>
 
         {/* Schematic 2 - Top Right */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 0.15, x: 0 }}
+          animate={{ opacity: 0.4, x: 0 }}
           transition={{ duration: 2, delay: 0.7 }}
-          className="absolute top-32 right-10 w-72 h-72"
+          className="absolute top-32 right-10 w-72 h-72 md:w-96 md:h-96"
         >
           <Image
             src="/images/placeholder-electrical.svg"
             alt=""
             fill
-            className="object-contain opacity-30 rotate-90"
-            sizes="288px"
+            className="object-contain rotate-90"
+            sizes="(max-width: 768px) 288px, 384px"
           />
         </motion.div>
 
         {/* Schematic 3 - Bottom Left */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.12, y: 0 }}
+          animate={{ opacity: 0.35, y: 0 }}
           transition={{ duration: 2, delay: 0.9 }}
-          className="absolute bottom-32 left-20 w-56 h-56"
+          className="absolute bottom-32 left-20 w-56 h-56 md:w-72 md:h-72"
         >
           <Image
             src="/images/placeholder-installation.svg"
             alt=""
             fill
-            className="object-contain opacity-25"
-            sizes="224px"
+            className="object-contain"
+            sizes="(max-width: 768px) 224px, 288px"
           />
         </motion.div>
 
         {/* Schematic 4 - Bottom Right */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.12, y: 0 }}
+          animate={{ opacity: 0.35, y: 0 }}
           transition={{ duration: 2, delay: 1.1 }}
-          className="absolute bottom-20 right-20 w-64 h-64"
+          className="absolute bottom-20 right-20 w-64 h-64 md:w-80 md:h-80"
         >
           <Image
             src="/images/placeholder-teletechnics.svg"
             alt=""
             fill
-            className="object-contain opacity-25 -rotate-12"
-            sizes="256px"
+            className="object-contain -rotate-12"
+            sizes="(max-width: 768px) 256px, 320px"
           />
         </motion.div>
 
         {/* Schematic 5 - Center Left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
+          animate={{ opacity: 0.3, scale: 1 }}
           transition={{ duration: 2.5, delay: 1.3 }}
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-48 h-48"
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64"
         >
           <Image
             src="/images/placeholder-electrical.svg"
             alt=""
             fill
-            className="object-contain opacity-20 rotate-45"
-            sizes="192px"
+            className="object-contain rotate-45"
+            sizes="(max-width: 768px) 192px, 256px"
           />
         </motion.div>
 
         {/* Schematic 6 - Center Right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
+          animate={{ opacity: 0.3, scale: 1 }}
           transition={{ duration: 2.5, delay: 1.5 }}
-          className="absolute top-1/2 right-0 -translate-y-1/2 w-48 h-48"
+          className="absolute top-1/2 right-0 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64"
         >
           <Image
             src="/images/placeholder-electrical.svg"
             alt=""
             fill
-            className="object-contain opacity-20 -rotate-45"
-            sizes="192px"
+            className="object-contain -rotate-45"
+            sizes="(max-width: 768px) 192px, 256px"
           />
         </motion.div>
       </div>
 
+      {/* Gradient overlay - AFTER schematics with lower opacity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/95 via-[#0A0A0A]/90 to-[#1A1A1A]/95 z-[8]" />
+
       {/* Animated grid pattern */}
-      <div className="absolute inset-0 z-0 opacity-10">
+      <div className="absolute inset-0 z-[6] opacity-15">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.5" opacity="0.3"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" strokeWidth="0.5" opacity="0.5"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -139,13 +139,13 @@ export default function HeroBackground() {
       {mounted && particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute w-1 h-1 bg-[#00D9FF] rounded-full"
+          className="absolute w-1.5 h-1.5 bg-[#00D9FF] rounded-full z-[7]"
           initial={{
             opacity: 0,
           }}
           animate={{
-            y: [0, -100, 0],
-            opacity: [0, 0.6, 0],
+            y: [0, -150, 0],
+            opacity: [0, 0.8, 0],
           }}
           transition={{
             duration: particle.duration,
@@ -156,6 +156,7 @@ export default function HeroBackground() {
           style={{
             left: `${particle.left}%`,
             top: `${particle.top}%`,
+            boxShadow: '0 0 6px rgba(0, 217, 255, 0.6)',
           }}
         />
       ))}
