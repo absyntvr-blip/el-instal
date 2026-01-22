@@ -74,7 +74,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Services Grid - 3 karty w równym grid */}
+        {/* Services Grid - 3 karty w równym grid, WYCENTROWANE */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -86,16 +86,17 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
+                className="h-full"
               >
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className="glass-card cursor-pointer group h-full flex flex-col"
+                  className="glass-card cursor-pointer group h-full flex flex-col text-center"
                   onClick={() => setExpanded(isExpanded ? null : index)}
                 >
-                  {/* Icon */}
-                  <div className="mb-6 flex items-start">
+                  {/* Icon - WYCENTROWANA */}
+                  <div className="mb-6 flex items-center justify-center">
                     <div 
-                      className="flex items-center justify-center w-16 h-16 rounded-2xl"
+                      className="flex items-center justify-center w-16 h-16 rounded-2xl mx-auto"
                       style={{
                         background: `radial-gradient(circle, ${service.color}15, ${service.color}05)`
                       }}
@@ -108,20 +109,20 @@ export default function Services() {
                     </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Content - WYCENTROWANY */}
                   <div className="flex-grow flex flex-col">
                     <h3 className="text-2xl font-bold text-white leading-tight tracking-tight mb-4">
                       {service.title}
                     </h3>
                     
-                    <p className="text-base text-white/70 leading-relaxed mb-6 flex-grow">
+                    <p className="text-base text-white/70 leading-relaxed mb-6 flex-grow min-h-[80px]">
                       {service.shortDesc}
                     </p>
 
                     <button
                       type="button"
                       onClick={(e) => { e.stopPropagation(); setExpanded(isExpanded ? null : index); }}
-                      className="flex items-center gap-2 p-2 rounded-full bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.12] transition-colors text-white/70 hover:text-white text-sm font-medium w-fit"
+                      className="flex items-center justify-center gap-2 p-2 rounded-full bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.12] transition-colors text-white/70 hover:text-white text-sm font-medium mx-auto"
                       aria-expanded={isExpanded}
                     >
                       {isExpanded ? (
@@ -135,7 +136,7 @@ export default function Services() {
                       initial={false}
                       animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden mt-4"
+                      className="overflow-hidden mt-4 text-left"
                     >
                       <ul className="space-y-3">
                         {service.fullDesc.map((item, idx) => (

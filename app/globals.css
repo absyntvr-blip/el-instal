@@ -22,6 +22,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 html {
@@ -104,8 +107,9 @@ h1 {
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.03em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
   margin-bottom: 2rem;
 }
 
@@ -114,8 +118,9 @@ h2 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
   margin-bottom: 4rem; /* 64px - DUŻO PRZESTRZENI */
 }
 
@@ -124,8 +129,9 @@ h3 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
   margin-bottom: 1.5rem; /* 24px */
 }
 

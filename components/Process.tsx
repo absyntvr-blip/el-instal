@@ -77,8 +77,12 @@ export default function Process() {
                     <Icon className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 leading-tight">{step.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed flex-grow">{step.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3 leading-tight whitespace-nowrap">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-white/60 leading-relaxed flex-grow">
+                  {step.description}
+                </p>
               </motion.div>
             );
           })}
