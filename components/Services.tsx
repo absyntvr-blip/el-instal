@@ -13,7 +13,7 @@ const services = [
     fullDesc: [
       'Diagnostyka i naprawa awarii elektrycznych',
       'Konserwacja i przeglądy okresowe instalacji',
-      'Modernizacja systemów zabezpieczeń (wyłączniki, zabezpieczenia)',
+      'Modernizacja systemów zabezpieczeń',
       'Pomiary instalacji elektrycznych',
       'Wydawanie protokołów i dokumentacji powykonawczej',
     ],
@@ -21,25 +21,25 @@ const services = [
   },
   {
     icon: Wrench,
-    title: 'Przebudowa i nowe instalacje',
+    title: 'Nowe instalacje',
     shortDesc: 'Kompletne instalacje od niskiego do wysokiego napięcia',
     fullDesc: [
-      'Instalacje niskiego napięcia (nn): kompletne instalacje elektryczne w budynkach mieszkalnych, rozdzielnice elektryczne, instalacje oświetleniowe LED, instalacje fotowoltaiczne',
-      'Instalacje wysokiego napięcia (WN): stacje transformatorowe, przyłącza energetyczne WN, rozdzielnie średniego napięcia (SN), modernizacja infrastruktury energetycznej',
+      'Instalacje niskiego napięcia (nn): instalacje elektryczne w budynkach mieszkalnych, rozdzielnice, instalacje oświetleniowe LED, fotowoltaika',
+      'Instalacje wysokiego napięcia (WN): stacje transformatorowe, przyłącza energetyczne WN, rozdzielnie średniego napięcia (SN)',
     ],
     color: '#FF6B00',
   },
   {
     icon: Camera,
-    title: 'Teletechnika na marketach budowlanych',
+    title: 'Teletechnika',
     shortDesc: 'Zaawansowane systemy teletechniczne dla obiektów handlowych',
     fullDesc: [
       'Systemy monitoringu CCTV (kamery IP, rejestratory)',
       'Kontrola dostępu (czytniki, szlabany, bramy)',
       'Systemy sygnalizacji pożarowej (SSP)',
       'Sieci strukturalne i okablowanie LAN',
-      'Systemy nagłośnienia i DSO (dźwiękowe systemy ostrzegawcze)',
-      'Integracja systemów BMS (Building Management System)',
+      'Systemy nagłośnienia i DSO',
+      'Integracja systemów BMS',
       'Instalacje w obiektach handlowych dużego formatu',
     ],
     color: '#00D9FF',
@@ -111,11 +111,11 @@ export default function Services() {
 
                   {/* Content - WYCENTROWANY */}
                   <div className="flex-grow flex flex-col">
-                    <h3 className="text-2xl font-bold text-white leading-tight tracking-tight mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight tracking-tight mb-4 px-2">
                       {service.title}
                     </h3>
                     
-                    <p className="text-base text-white/70 leading-relaxed mb-6 flex-grow min-h-[80px]">
+                    <p className="text-base text-white/70 leading-relaxed mb-6 flex-grow min-h-[80px] px-2">
                       {service.shortDesc}
                     </p>
 
@@ -136,7 +136,7 @@ export default function Services() {
                       initial={false}
                       animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden mt-4 text-left"
+                      className="overflow-hidden mt-4 text-left px-2"
                     >
                       <ul className="space-y-3">
                         {service.fullDesc.map((item, idx) => (

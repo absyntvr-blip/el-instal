@@ -9,25 +9,25 @@ const steps = [
     number: '01',
     icon: FileSearch,
     title: 'Audyt i wycena',
-    description: 'Dokładna analiza potrzeb i przygotowanie szczegółowej wyceny',
+    description: 'Analiza potrzeb i przygotowanie szczegółowej wyceny projektu',
   },
   {
     number: '02',
     icon: DraftingCompass,
     title: 'Projektowanie',
-    description: 'Tworzenie dokumentacji projektowej zgodnej z normami',
+    description: 'Tworzenie dokumentacji projektowej zgodnej z obowiązującymi normami',
   },
   {
     number: '03',
     icon: Wrench,
     title: 'Realizacja',
-    description: 'Profesjonalne wykonanie instalacji przez certyfikowany zespół',
+    description: 'Profesjonalne wykonanie instalacji przez certyfikowany zespół specjalistów',
   },
   {
     number: '04',
     icon: FileCheck,
     title: 'Odbiór i dokumentacja',
-    description: 'Kompletna dokumentacja powykonawcza i protokoły pomiarowe',
+    description: 'Kompletna dokumentacja powykonawcza oraz protokoły pomiarowe',
   },
 ];
 
@@ -69,7 +69,7 @@ export default function Process() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="glass-card h-full flex flex-col text-center"
               >
-                <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="flex items-center justify-center gap-3 mb-6">
                   <div className="stat-number text-3xl text-[#00D9FF] leading-none">
                     {step.number}
                   </div>
@@ -77,10 +77,10 @@ export default function Process() {
                     <Icon className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 leading-tight whitespace-nowrap">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-4 leading-tight px-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-white/60 leading-relaxed flex-grow">
+                <p className="text-sm text-white/60 leading-relaxed flex-grow px-2">
                   {step.description}
                 </p>
               </motion.div>
