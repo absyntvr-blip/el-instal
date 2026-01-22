@@ -39,59 +39,57 @@ export default function Process() {
 
   return (
     <section id="process" className="section-spacing relative w-full">
-      <div className="container mx-auto max-w-7xl">
-        {/* Section Header */}
+      <div className="container mx-auto">
+        {/* Section Header (Linear-style) */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-32"
+          transition={{ duration: 0.6 }}
+          className="section-header"
         >
-          <div className="text-center max-w-[800px] mx-auto">
-            <div className="sub-header">JAK PRACUJEMY</div>
-            <h2 className="text-white">Proces pracy</h2>
-            <p className="section-subtitle">
-              Od pierwszego kontaktu do finalnego odbioru - kompleksowa obsługa projektu
-            </p>
-          </div>
+          <div className="sub-header">JAK PRACUJEMY</div>
+          <h2 className="text-white">Proces pracy</h2>
+          <p className="section-subtitle">
+            Od pierwszego kontaktu do finalnego odbioru — kompleksowa obsługa projektu
+          </p>
         </motion.div>
 
-        {/* Steps Grid - 12 column system */}
+        {/* Steps Grid (Linear-style) */}
         <div className="content-width">
           <div className="grid grid-cols-12 gap-8">
             {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="col-span-12 md:col-span-6 lg:col-span-3 relative group"
-              >
-                <div className="glass-card h-full flex flex-col text-left">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="stat-number text-4xl text-[#00D9FF] leading-none">
-                      {step.number}
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="col-span-12 md:col-span-6 lg:col-span-3 relative group"
+                >
+                  <div className="glass-card h-full flex flex-col text-left">
+                    <div className="flex items-start gap-4 mb-5">
+                      <div className="stat-number text-3xl text-[#00D9FF] leading-none">
+                        {step.number}
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
+                        <Icon className="w-6 h-6 text-[#00D9FF]" />
+                      </div>
                     </div>
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-[#00D9FF]/10 to-[#00D9FF]/5">
-                      <Icon className="w-7 h-7 text-[#00D9FF]" />
-                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 leading-tight">{step.title}</h3>
+                    <p className="text-sm text-white/60 leading-relaxed flex-grow">{step.description}</p>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4 leading-tight">{step.title}</h3>
-                  <p className="text-base text-white/70 leading-relaxed flex-grow">{step.description}</p>
-                </div>
 
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <div className="w-8 h-0.5 bg-gradient-to-r from-[#00D9FF]/30 to-transparent" />
-                  </div>
-                )}
-              </motion.div>
-            );
-          })}
-        </div>
+                  {index < steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-[#00D9FF]/20 to-transparent" />
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-import AnimatedBackground from '@/components/AnimatedBackground';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -10,9 +9,8 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen linear-gradient-bg">
       <Navigation />
-      <AnimatedBackground />
       <Hero />
       <About />
       <Services />

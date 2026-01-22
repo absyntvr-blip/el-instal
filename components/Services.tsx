@@ -61,21 +61,19 @@ export default function Services() {
   return (
     <section id="services" className="section-spacing relative w-full">
       <div className="container mx-auto">
-        {/* Section Header */}
+        {/* Section Header (Linear-style) */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-32"
+          transition={{ duration: 0.6 }}
+          className="section-header"
         >
-          <div className="text-center max-w-[800px] mx-auto">
-            <div className="sub-header">CO ROBIMY</div>
-            <h2 className="text-white">Nasze usługi</h2>
-            <p className="section-subtitle">
-              Kompleksowe rozwiązania w zakresie instalacji elektrycznych i teletechnicznych
-            </p>
-          </div>
+          <div className="sub-header">CO ROBIMY</div>
+          <h2 className="text-white">Nasze usługi</h2>
+          <p className="section-subtitle">
+            Kompleksowe rozwiązania w zakresie instalacji elektrycznych i teletechnicznych
+          </p>
         </motion.div>
 
         {/* Services - Vertical Stack (full width cards) */}
@@ -93,7 +91,7 @@ export default function Services() {
                   transition={{ delay: index * 0.15, duration: 0.6 }}
                 >
                   <motion.div
-                    whileHover={{ y: -4 }}
+                    whileHover={{ y: -2 }}
                     className="glass-card cursor-pointer group"
                     onClick={() => setExpanded(isExpanded ? null : index)}
                   >
@@ -121,13 +119,18 @@ export default function Services() {
                           <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight flex-grow">
                             {service.title}
                           </h3>
-                          <div className="p-2 bg-black/40 backdrop-blur-sm rounded-full border border-white/10 flex-shrink-0">
+                          <button
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); setExpanded(isExpanded ? null : index); }}
+                            className="flex items-center gap-2 p-2 rounded-full bg-white/[0.06] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.12] transition-colors flex-shrink-0 text-white/70 hover:text-white text-sm font-medium"
+                            aria-expanded={isExpanded}
+                          >
                             {isExpanded ? (
-                              <ChevronUp className="w-5 h-5 text-gray-300" />
+                              <><ChevronUp className="w-5 h-5" /> Zwiń</>
                             ) : (
-                              <ChevronDown className="w-5 h-5 text-gray-300" />
+                              <><ChevronDown className="w-5 h-5" /> Rozwiń szczegóły →</>
                             )}
-                          </div>
+                          </button>
                         </div>
                         
                         <p className="text-xl text-white/70 leading-relaxed mb-6 max-w-2xl">

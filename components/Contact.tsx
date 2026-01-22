@@ -46,23 +46,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-spacing relative w-full overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto relative z-10">
+    <section id="contact" className="section-spacing relative w-full">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="max-w-6xl mx-auto"
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
         >
-          {/* Section Header */}
-          <div className="text-center max-w-[800px] mx-auto mb-32">
+          {/* Section Header (Linear-style) */}
+          <div className="section-header mb-32">
             <div className="sub-header">SKONTAKTUJ SIĘ</div>
             <h2 className="text-white">Kontakt</h2>
             <p className="section-subtitle">
@@ -73,24 +67,24 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="space-y-6"
+              transition={{ delay: 0.15, duration: 0.5 }}
+              className="space-y-5"
             >
               {/* Phone */}
               <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 bg-[#2A2A2A] rounded-xl border border-[#2A2A2A] hover:border-[#00D9FF]/30 transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+                className="glass-card flex items-start gap-4"
               >
-                <div className="p-4 rounded-xl bg-[#00D9FF]/10 group-hover:bg-[#00D9FF]/20 transition-colors">
-                  <Phone className="w-6 h-6 text-[#00D9FF] group-hover:scale-110 transition-transform" />
+                <div className="p-3 rounded-xl bg-white/[0.06] border border-white/[0.08] flex-shrink-0">
+                  <Phone className="w-5 h-5 text-[#00D9FF]" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-white font-semibold mb-2 text-lg">Telefon</h3>
-                  <a 
-                    href="tel:+48123456789" 
-                    className="text-gray-300 hover:text-[#00D9FF] transition-colors text-base font-medium block"
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white font-semibold mb-1 text-base">Telefon</h3>
+                  <a
+                    href="tel:+48123456789"
+                    className="text-white/60 hover:text-[#00D9FF] transition-colors text-sm block"
                   >
                     +48 123 456 789
                   </a>
@@ -99,17 +93,17 @@ export default function Contact() {
 
               {/* Email */}
               <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 bg-[#2A2A2A] rounded-xl border border-[#2A2A2A] hover:border-[#00D9FF]/30 transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+                className="glass-card flex items-start gap-4"
               >
-                <div className="p-4 rounded-xl bg-[#00D9FF]/10 group-hover:bg-[#00D9FF]/20 transition-colors">
-                  <Mail className="w-6 h-6 text-[#00D9FF] group-hover:scale-110 transition-transform" />
+                <div className="p-3 rounded-xl bg-white/[0.06] border border-white/[0.08] flex-shrink-0">
+                  <Mail className="w-5 h-5 text-[#00D9FF]" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-white font-semibold mb-2 text-lg">Email</h3>
-                  <a 
-                    href="mailto:kontakt@el-instal.pl" 
-                    className="text-gray-300 hover:text-[#00D9FF] transition-colors text-base font-medium block break-all"
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white font-semibold mb-1 text-base">Email</h3>
+                  <a
+                    href="mailto:kontakt@el-instal.pl"
+                    className="text-white/60 hover:text-[#00D9FF] transition-colors text-sm block break-all"
                   >
                     kontakt@el-instal.pl
                   </a>
@@ -118,31 +112,28 @@ export default function Contact() {
 
               {/* Person card */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-8 p-8 bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-xl border border-[#00D9FF]/20 hover:border-[#00D9FF]/40 transition-all duration-300 relative overflow-hidden"
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="glass-card"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D9FF]/5 rounded-full blur-2xl"></div>
-                <div className="relative z-10">
-                  <h3 className="text-white font-bold mb-2 text-xl">Jakub [Nazwisko]</h3>
-                  <p className="text-gray-400 text-base leading-relaxed">
-                    Specjalista ds. instalacji elektrycznych i teletechnicznych
-                  </p>
-                </div>
+                <h3 className="text-white font-semibold mb-2 text-lg">Jakub [Nazwisko]</h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Specjalista ds. instalacji elektrycznych i teletechnicznych
+                </p>
               </motion.div>
             </motion.div>
 
             {/* Contact Form */}
             <motion.form
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
               onSubmit={handleSubmit}
-              className="space-y-6 p-6 md:p-8 bg-gradient-to-br from-[#2A2A2A]/50 to-[#1A1A1A]/50 rounded-xl border border-[#2A2A2A] backdrop-blur-sm"
+              className="glass-card space-y-5"
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-3">
+                <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
                   Imię i nazwisko <span className="text-[#00D9FF]">*</span>
                 </label>
                 <input
@@ -152,13 +143,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#00D9FF] focus:bg-[#1F1F1F] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-black/40 border border-white/[0.08] rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#00D9FF]/50 focus:bg-white/[0.04] transition-all duration-300 text-sm"
                   placeholder="Jan Kowalski"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-3">
+                <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
                   Email <span className="text-[#00D9FF]">*</span>
                 </label>
                 <input
@@ -168,13 +159,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#00D9FF] focus:bg-[#1F1F1F] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-black/40 border border-white/[0.08] rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#00D9FF]/50 focus:bg-white/[0.04] transition-all duration-300 text-sm"
                   placeholder="jan@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-3">
+                <label htmlFor="phone" className="block text-sm font-medium text-white/80 mb-2">
                   Telefon <span className="text-[#00D9FF]">*</span>
                 </label>
                 <input
@@ -184,13 +175,13 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#00D9FF] focus:bg-[#1F1F1F] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-black/40 border border-white/[0.08] rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#00D9FF]/50 focus:bg-white/[0.04] transition-all duration-300 text-sm"
                   placeholder="+48 123 456 789"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-3">
+                <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
                   Zakres prac <span className="text-[#00D9FF]">*</span>
                 </label>
                 <textarea
@@ -199,8 +190,8 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-5 py-4 bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#00D9FF] focus:bg-[#1F1F1F] transition-all duration-300 resize-none"
+                  rows={4}
+                  className="w-full px-4 py-3 bg-black/40 border border-white/[0.08] rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#00D9FF]/50 focus:bg-white/[0.04] transition-all duration-300 resize-none text-sm"
                   placeholder="Opisz zakres prac..."
                 />
               </div>
@@ -208,9 +199,9 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-5 bg-[#00D9FF] text-[#0A0A0A] font-bold rounded-xl neon-glow-hover transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-base shadow-lg shadow-[#00D9FF]/20"
+                className="cta-button w-full py-5 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               >
                 {isSubmitting ? (
                   <>

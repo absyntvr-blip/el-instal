@@ -14,7 +14,7 @@
   --color-electric-blue: var(--electric-blue);
   --color-zinc-gray: var(--zinc-gray);
   --color-orange-warn: var(--orange-warn);
-  --font-sans: var(--font-space-grotesk);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -29,11 +29,27 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: #000;
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+/* Linear-style signature gradient (cyan variant) */
+.linear-gradient-bg {
+  background: 
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(0, 217, 255, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(0, 217, 255, 0.08),
+      transparent 50%
+    ),
+    #000;
 }
 
 /* Container utilities - Premium max-width system */
@@ -70,7 +86,7 @@ section {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -127,14 +143,14 @@ h3 {
   font-weight: 400;
 }
 
-/* Section headings subtitle */
+/* Section lead (Linear-style) */
 .section-subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.5rem); /* 18px - 24px - larger */
-  line-height: 1.6;
+  font-size: 24px;
+  line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
-  max-width: 65ch; /* Optimal reading width */
-  margin-top: 2rem; /* 32px spacing */
+  max-width: 65ch;
+  margin-top: 32px;
 }
 
 /* Body text - larger for readability */
@@ -146,45 +162,43 @@ p {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Section spacing - MASSIVE breathing space (like Apple, Stripe) */
+/* Section spacing (Linear / Apple / Stripe) */
 .section-spacing {
   padding-top: clamp(120px, 15vh, 200px);
   padding-bottom: clamp(120px, 15vh, 200px);
 }
 
-/* Premium glassmorphism cards (iOS/Apple style) */
+/* Section header block (Linear-style) */
+.section-header {
+  max-width: 800px;
+  margin: 0 auto 120px;
+  text-align: center;
+}
+
+/* Linear-style glassmorphism cards (https://linear.app) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: clamp(48px, 6vw, 64px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Subtelny gradient overlay */
-  background-image: 
-    radial-gradient(
-      circle at top right, 
-      rgba(0, 217, 255, 0.05), 
-      transparent 60%
-    );
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 217, 255, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 
-    0 0 60px rgba(0, 217, 255, 0.1),
-    0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 217, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Sub-header style (overline) */
+/* Sub-header / overline (Linear-style) */
 .sub-header {
-  font-size: 0.875rem; /* 14px */
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #00D9FF;
-  margin-bottom: 1.5rem; /* 24px */
+  margin-bottom: 24px;
   display: block;
 }
 
@@ -195,19 +209,31 @@ p {
   letter-spacing: -0.02em;
 }
 
-/* Neon glow effect */
-.neon-glow {
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4),
-              0 0 40px rgba(0, 217, 255, 0.2),
-              0 0 60px rgba(0, 217, 255, 0.1);
+/* CTA button (brief: 18px, 20px 48px, 12px radius) */
+.cta-button {
+  font-size: 18px;
+  padding: 20px 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00D9FF, #0099CC);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 217, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.neon-glow-hover:hover {
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.6),
-              0 0 60px rgba(0, 217, 255, 0.4),
-              0 0 90px rgba(0, 217, 255, 0.2);
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 15px 40px rgba(0, 217, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
+
+.neon-glow { box-shadow: 0 0 20px rgba(0, 217, 255, 0.3); }
+.neon-glow-hover:hover { box-shadow: 0 0 24px rgba(0, 217, 255, 0.4); transition: box-shadow 0.3s ease; }
 
 /* Form inputs */
 input[type="text"],
