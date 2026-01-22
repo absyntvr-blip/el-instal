@@ -50,7 +50,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-2xl md:text-3xl lg:text-4xl text-gray-100 mb-6 md:mb-8 font-medium leading-tight tracking-tight"
+            className="text-3xl md:text-5xl lg:text-6xl text-gray-100 mb-8 md:mb-12 font-medium leading-tight tracking-tight"
             style={{ letterSpacing: '-0.02em' }}
           >
             Precyzja w instalacjach elektrycznych
@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light"
             style={{ letterSpacing: '0.01em' }}
           >
             Od niskiego do wysokiego napięcia. Od idei do certyfikatu.
