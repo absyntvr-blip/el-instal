@@ -18,31 +18,35 @@ export default function About() {
 
   return (
     <section id="about" className="section-spacing relative w-full">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center mb-20 md:mb-24"
+          className="mb-20 md:mb-24"
         >
-          <h2 className="text-white mb-6 md:mb-8">O nas</h2>
-          <div className="space-y-6 max-w-3xl mx-auto">
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+          <div className="text-center mb-12">
+            <div className="sub-header mb-3">NASZA HISTORIA</div>
+            <h2 className="text-white mb-8">O nas</h2>
+          </div>
+          
+          <div className="space-y-6 max-w-[650px] mx-auto">
+            <p>
               Od ponad 15 lat realizujemy projekty instalacji elektrycznych i teletechnicznych 
               na terenie całej Polski. Specjalizujemy się w kompleksowych rozwiązaniach 
               od instalacji domowych po zaawansowane systemy dla obiektów komercyjnych.
             </p>
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+            <p>
               Nasz zespół certyfikowanych elektryków i specjalistów teletechnicznych 
               zapewnia najwyższą jakość wykonania oraz pełną dokumentację powykonawczą.
             </p>
           </div>
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+        {/* Stats Grid - 12 column system */}
+        <div className="grid grid-cols-12 gap-8 max-w-6xl mx-auto">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -51,13 +55,13 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="text-center p-8 md:p-10 rounded-xl bg-[#2A2A2A] border border-[#2A2A2A]/50 hover:border-[#00D9FF]/50 transition-all duration-300 flex flex-col items-center justify-center min-h-[240px] group"
+                className="col-span-12 md:col-span-4 glass-card p-8 flex flex-col h-full"
               >
-                <div className="mb-8 p-4 rounded-xl bg-[#00D9FF]/10 group-hover:bg-[#00D9FF]/20 transition-colors">
-                  <Icon className="w-10 h-10 md:w-12 md:h-12 text-[#00D9FF]" />
+                <div className="mb-6 p-3 rounded-lg bg-gradient-to-br from-[#00D9FF]/10 to-[#00D9FF]/5 w-fit">
+                  <Icon className="w-8 h-8 text-[#00D9FF]" />
                 </div>
-                <div className="text-5xl md:text-6xl font-bold text-white mb-4 leading-none tracking-tight">{stat.value}</div>
-                <div className="text-gray-400 text-base md:text-lg leading-relaxed px-2">{stat.label}</div>
+                <div className="stat-number text-5xl md:text-6xl text-white mb-3 leading-none">{stat.value}</div>
+                <div className="text-slate-400 text-sm uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             );
           })}

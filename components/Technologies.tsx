@@ -21,33 +21,36 @@ export default function Technologies() {
 
   return (
     <section className="section-spacing relative w-full">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20 md:mb-24"
+          className="mb-20 md:mb-24"
         >
-          <h2 className="text-white mb-6 md:mb-8">Technologie</h2>
-          <p className="section-subtitle mx-auto">
+          <div className="text-center mb-12">
+            <div className="sub-header mb-3">NASI PARTNERZY</div>
+            <h2 className="text-white mb-8">Technologie</h2>
+          </div>
+          <p className="section-subtitle mx-auto max-w-[650px]">
             Współpracujemy z wiodącymi producentami sprzętu elektrycznego i teletechnicznego
           </p>
         </motion.div>
 
-        {/* Technologies Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {/* Technologies Grid - 12 column system */}
+        <div className="grid grid-cols-12 gap-8 max-w-5xl mx-auto">
           {technologies.map((tech, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              whileHover={{ scale: 1.05, y: -4 }}
-              className="bg-[#2A2A2A] border border-[#2A2A2A]/50 rounded-xl p-8 text-center hover:border-[#00D9FF]/50 transition-all duration-300 min-h-[140px] flex items-center justify-center group"
+              whileHover={{ y: -5 }}
+              className="col-span-6 md:col-span-4 lg:col-span-3 glass-card p-8 text-center min-h-[120px] flex items-center justify-center group"
             >
-              <div className="text-lg md:text-xl font-semibold text-white leading-tight group-hover:text-[#00D9FF] transition-colors">
+              <div className="text-base font-semibold text-white leading-tight group-hover:text-[#00D9FF] transition-colors">
                 {tech}
               </div>
             </motion.div>

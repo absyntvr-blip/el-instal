@@ -63,8 +63,9 @@ export default function Contact() {
         >
           {/* Section Header */}
           <div className="text-center mb-20 md:mb-24">
-            <h2 className="text-white mb-6 md:mb-8">Kontakt</h2>
-            <p className="section-subtitle mx-auto">
+            <div className="sub-header mb-3">SKONTAKTUJ SIĘ</div>
+            <h2 className="text-white mb-8">Kontakt</h2>
+            <p className="section-subtitle mx-auto max-w-[650px]">
               Skontaktuj się z nami, aby uzyskać bezpłatną wycenę projektu
             </p>
           </div>
