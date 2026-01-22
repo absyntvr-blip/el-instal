@@ -28,7 +28,7 @@ export default function About() {
           className="max-w-4xl mx-auto text-center mb-20 md:mb-24"
         >
           <h2 className="text-white mb-6 md:mb-8">O nas</h2>
-          <div className="space-y-6 max-w-3xl mx-auto text-left md:text-center">
+          <div className="space-y-6 max-w-3xl mx-auto">
             <p className="text-gray-300 leading-relaxed text-base md:text-lg">
               Od ponad 15 lat realizujemy projekty instalacji elektrycznych i teletechnicznych 
               na terenie całej Polski. Specjalizujemy się w kompleksowych rozwiązaniach 
