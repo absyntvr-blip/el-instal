@@ -57,8 +57,8 @@ export default function Process() {
           </p>
         </motion.div>
 
-        {/* Steps Grid - 4 kroki w grid-cols-4 (desktop) / cols-2 (tablet) / cols-1 (mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Steps Grid - Desktop: 2x2 grid, Tablet: 2 kolumny, Mobile: 1 kolumna */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -69,18 +69,18 @@ export default function Process() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="glass-card h-full flex flex-col text-center"
               >
-                <div className="flex items-center justify-center gap-3 mb-6">
-                  <div className="stat-number text-3xl text-[#00D9FF] leading-none">
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <div className="stat-number text-4xl lg:text-5xl text-[#00D9FF] leading-none">
                     {step.number}
                   </div>
-                  <div className="p-2.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
-                    <Icon className="w-6 h-6 text-[#00D9FF]" />
+                  <div className="p-3 rounded-lg bg-white/[0.06] border border-white/[0.08]">
+                    <Icon className="w-7 h-7 lg:w-8 lg:h-8 text-[#00D9FF]" />
                   </div>
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-4 leading-tight px-2">
+                <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4 leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm text-white/60 leading-relaxed flex-grow px-2">
+                <p className="text-base lg:text-lg text-white/60 leading-relaxed flex-grow">
                   {step.description}
                 </p>
               </motion.div>
