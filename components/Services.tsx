@@ -59,7 +59,7 @@ export default function Services() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-20 md:py-28 lg:py-32 relative w-full">
+    <section id="services" className="section-spacing relative w-full">
       <div className="container mx-auto">
         {/* Section Header */}
         <motion.div
@@ -67,15 +67,15 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-20 md:mb-24"
         >
-          <h2 className="text-white mb-4 md:mb-6">Nasze usługi</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <h2 className="text-white mb-6 md:mb-8">Nasze usługi</h2>
+          <p className="section-subtitle mx-auto">
             Kompleksowe rozwiązania w zakresie instalacji elektrycznych i teletechnicznych
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isExpanded = expanded === index;
@@ -121,9 +121,9 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 leading-tight">{service.title}</h3>
-                    <p className="text-gray-300 mb-4 flex-grow leading-relaxed">{service.shortDesc}</p>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 leading-tight">{service.title}</h3>
+                    <p className="text-gray-300 mb-6 flex-grow leading-relaxed text-base">{service.shortDesc}</p>
 
                     <motion.div
                       initial={false}
